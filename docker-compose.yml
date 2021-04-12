@@ -1,4 +1,10 @@
 version: "3.3"
 services:
   ml:
-    image: devashishupadhyay/scikit-learn-docker
+    build: .
+    ports:
+      - 8888:8888
+    environment:
+      - PASSWORD=password
+    volumes:
+      - ./app:/code
